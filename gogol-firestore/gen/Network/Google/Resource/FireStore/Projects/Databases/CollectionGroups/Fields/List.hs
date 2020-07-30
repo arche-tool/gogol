@@ -48,8 +48,8 @@ module Network.Google.Resource.FireStore.Projects.Databases.CollectionGroups.Fie
     , pdcgflCallback
     ) where
 
-import           Network.Google.FireStore.Types
-import           Network.Google.Prelude
+import Network.Google.FireStore.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @firestore.projects.databases.collectionGroups.fields.list@ method which the
 -- 'ProjectsDatabasesCollectionGroupsFieldsList' request conforms to.
@@ -79,15 +79,15 @@ type ProjectsDatabasesCollectionGroupsFieldsListResource
 -- /See:/ 'projectsDatabasesCollectionGroupsFieldsList' smart constructor.
 data ProjectsDatabasesCollectionGroupsFieldsList =
   ProjectsDatabasesCollectionGroupsFieldsList'
-    { _pdcgflParent         :: !Text
-    , _pdcgflXgafv          :: !(Maybe Xgafv)
+    { _pdcgflParent :: !Text
+    , _pdcgflXgafv :: !(Maybe Xgafv)
     , _pdcgflUploadProtocol :: !(Maybe Text)
-    , _pdcgflAccessToken    :: !(Maybe Text)
-    , _pdcgflUploadType     :: !(Maybe Text)
-    , _pdcgflFilter         :: !(Maybe Text)
-    , _pdcgflPageToken      :: !(Maybe Text)
-    , _pdcgflPageSize       :: !(Maybe (Textual Int32))
-    , _pdcgflCallback       :: !(Maybe Text)
+    , _pdcgflAccessToken :: !(Maybe Text)
+    , _pdcgflUploadType :: !(Maybe Text)
+    , _pdcgflFilter :: !(Maybe Text)
+    , _pdcgflPageToken :: !(Maybe Text)
+    , _pdcgflPageSize :: !(Maybe (Textual Int32))
+    , _pdcgflCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
@@ -130,7 +130,7 @@ projectsDatabasesCollectionGroupsFieldsList pPdcgflParent_ =
     }
 
 
--- | A parent name of the form
+-- | Required. A parent name of the form
 -- \`projects\/{project_id}\/databases\/{database_id}\/collectionGroups\/{collection_id}\`
 pdcgflParent :: Lens' ProjectsDatabasesCollectionGroupsFieldsList Text
 pdcgflParent

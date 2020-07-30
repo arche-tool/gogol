@@ -1,5 +1,5 @@
-{-# LANGUAGE DataKinds          #-}
 {-# LANGUAGE DeriveDataTypeable #-}
+{-# LANGUAGE DataKinds          #-}
 {-# LANGUAGE DeriveGeneric      #-}
 {-# LANGUAGE NoImplicitPrelude  #-}
 {-# LANGUAGE OverloadedStrings  #-}
@@ -133,6 +133,12 @@ module Network.Google.FireStore.Types
     , gfavidmEndTime
     , gfavidmOperationState
 
+    -- * BatchWriteResponse
+    , BatchWriteResponse
+    , batchWriteResponse
+    , bwrStatus
+    , bwrWriteResults
+
     -- * BeginTransactionRequest
     , BeginTransactionRequest
     , beginTransactionRequest
@@ -173,6 +179,7 @@ module Network.Google.FireStore.Types
     , wTransform
     , wUpdateMask
     , wCurrentDocument
+    , wUpdateTransforms
     , wDelete
     , wUpdate
 
@@ -229,10 +236,12 @@ module Network.Google.FireStore.Types
     -- * RunQueryResponse
     , RunQueryResponse
     , runQueryResponse
-    , rReadTime
-    , rSkippedResults
-    , rTransaction
-    , rDocument
+
+    -- * BatchWriteRequest
+    , BatchWriteRequest
+    , batchWriteRequest
+    , bwrLabels
+    , bwrWrites
 
     -- * GoogleFirestoreAdminV1IndexQueryScope
     , GoogleFirestoreAdminV1IndexQueryScope (..)
@@ -285,6 +294,12 @@ module Network.Google.FireStore.Types
 
     -- * ValueNullValue
     , ValueNullValue (..)
+
+    -- * PartitionQueryResponse
+    , PartitionQueryResponse
+    , partitionQueryResponse
+    , pqrNextPageToken
+    , pqrPartitions
 
     -- * StatusDetailsItem
     , StatusDetailsItem
@@ -365,6 +380,14 @@ module Network.Google.FireStore.Types
     , dcDocument
     , dcTargetIds
     , dcRemovedTargetIds
+
+    -- * RunQueryDocument
+    , RunQueryDocument
+    , runQueryDocument
+    , rqdReadTime
+    , rqdSkippedResults
+    , rqdTransaction
+    , rqdDocument
 
     -- * GoogleFirestoreAdminV1FieldOperationMetadata
     , GoogleFirestoreAdminV1FieldOperationMetadata
@@ -456,6 +479,11 @@ module Network.Google.FireStore.Types
 
     -- * FieldFilterOp
     , FieldFilterOp (..)
+
+    -- * BatchWriteRequestLabels
+    , BatchWriteRequestLabels
+    , batchWriteRequestLabels
+    , bwrlAddtional
 
     -- * Projection
     , Projection
@@ -606,6 +634,14 @@ module Network.Google.FireStore.Types
     -- * GoogleFirestoreAdminV1ExportDocumentsMetadataOperationState
     , GoogleFirestoreAdminV1ExportDocumentsMetadataOperationState (..)
 
+    -- * PartitionQueryRequest
+    , PartitionQueryRequest
+    , partitionQueryRequest
+    , pqrStructuredQuery
+    , pqrPageToken
+    , pqrPageSize
+    , pqrPartitionCount
+
     -- * UnaryFilter
     , UnaryFilter
     , unaryFilter
@@ -613,9 +649,9 @@ module Network.Google.FireStore.Types
     , ufField
     ) where
 
-import           Network.Google.FireStore.Types.Product
-import           Network.Google.FireStore.Types.Sum
-import           Network.Google.Prelude
+import Network.Google.FireStore.Types.Product
+import Network.Google.FireStore.Types.Sum
+import Network.Google.Prelude
 
 -- | Default request referring to version 'v1' of the Cloud Firestore API. This contains the host and root path used as a starting point for constructing service requests.
 fireStoreService :: ServiceConfig

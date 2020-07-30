@@ -52,8 +52,8 @@ module Network.Google.Resource.FireStore.Projects.Databases.CollectionGroups.Fie
     , pdcgfpCallback
     ) where
 
-import           Network.Google.FireStore.Types
-import           Network.Google.Prelude
+import Network.Google.FireStore.Types
+import Network.Google.Prelude
 
 -- | A resource alias for @firestore.projects.databases.collectionGroups.fields.patch@ method which the
 -- 'ProjectsDatabasesCollectionGroupsFieldsPatch' request conforms to.
@@ -85,14 +85,14 @@ type ProjectsDatabasesCollectionGroupsFieldsPatchResource
 -- /See:/ 'projectsDatabasesCollectionGroupsFieldsPatch' smart constructor.
 data ProjectsDatabasesCollectionGroupsFieldsPatch =
   ProjectsDatabasesCollectionGroupsFieldsPatch'
-    { _pdcgfpXgafv          :: !(Maybe Xgafv)
+    { _pdcgfpXgafv :: !(Maybe Xgafv)
     , _pdcgfpUploadProtocol :: !(Maybe Text)
-    , _pdcgfpUpdateMask     :: !(Maybe GFieldMask)
-    , _pdcgfpAccessToken    :: !(Maybe Text)
-    , _pdcgfpUploadType     :: !(Maybe Text)
-    , _pdcgfpPayload        :: !GoogleFirestoreAdminV1Field
-    , _pdcgfpName           :: !Text
-    , _pdcgfpCallback       :: !(Maybe Text)
+    , _pdcgfpUpdateMask :: !(Maybe GFieldMask)
+    , _pdcgfpAccessToken :: !(Maybe Text)
+    , _pdcgfpUploadType :: !(Maybe Text)
+    , _pdcgfpPayload :: !GoogleFirestoreAdminV1Field
+    , _pdcgfpName :: !Text
+    , _pdcgfpCallback :: !(Maybe Text)
     }
   deriving (Eq, Show, Data, Typeable, Generic)
 
